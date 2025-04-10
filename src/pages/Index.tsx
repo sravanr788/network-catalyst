@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Introduction from '@/components/sections/Introduction';
@@ -12,36 +14,44 @@ import Advance from '@/components/sections/Advance';
 import News from '@/components/sections/News';
 import Associates from '@/components/sections/Associates';
 
-const Index = () => {
+const Index: NextPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <>
+      <Head>
+        <title>Network Catalyst Solutions - IT Services & Consulting</title>
+        <meta name="description" content="Empowering businesses through innovative IT solutions" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      
+      <div className="flex flex-col min-h-screen">
+        <Header />
 
-      {/* Placeholder for Hero Section - we'll leave this empty as requested */}
-      <div className="h-screen bg-blue-gradient flex items-center justify-center">
-        <div className="text-white text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Network Catalyst Solutions</h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-            Empowering businesses through innovative IT solutions
-          </p>
+        {/* Hero Section */}
+        <div className="h-screen bg-blue-gradient flex items-center justify-center">
+          <div className="text-white text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Network Catalyst Solutions</h1>
+            <p className="text-xl md:text-2xl max-w-2xl mx-auto">
+              Empowering businesses through innovative IT solutions
+            </p>
+          </div>
         </div>
+
+        {/* Main Content Sections */}
+        <main>
+          <Introduction />
+          <Offerings />
+          <AboutUs />
+          <Services />
+          <CaseStudies />
+          <Sectors />
+          <Advance />
+          <News />
+          <Associates />
+        </main>
+
+        <Footer />
       </div>
-
-      {/* Main Content Sections */}
-      <main>
-        <Introduction />
-        <Offerings />
-        <AboutUs />
-        <Services />
-        <CaseStudies />
-        <Sectors />
-        <Advance />
-        <News />
-        <Associates />
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 
